@@ -1,0 +1,61 @@
+@import "../../../styles/mixins";
+
+:host {
+  margin: 20px 10px 0px 10px;
+  .container {
+    @include container;
+    .add-user {
+      align-self: flex-end;
+      margin: 10px 0px;
+    }
+    .agent-list {
+      height: 85vh;
+      display: block;
+      overflow: hidden;
+      background: $primary-text-color;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      &__empty {
+        display: flex;
+        padding: 20px;
+        font-size: 22px;
+        font-weight: 500;
+        color: $secondary-greey;
+      }
+      tbody {
+        display: block;
+        height: calc(100% - 80px);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+      thead {
+        background-color: $primary-text-color;
+        color: $primary-greey;
+        text-transform: uppercase;
+      }
+      thead,
+      tbody tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+        padding: 15px;
+      }
+      tbody tr {
+        background-color: $cultured;
+        color: $secondary-text-color;
+        border: 1px solid $primary-text-color;
+        &:hover {
+          background-color: $gainsboro;
+          cursor: pointer;
+        }
+      }
+
+      th,
+      td {
+        width: 20%;
+        padding: 8px;
+        text-align: left;
+      }
+    }
+  }
+}

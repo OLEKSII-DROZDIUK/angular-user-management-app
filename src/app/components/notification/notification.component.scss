@@ -1,0 +1,85 @@
+@import "../../../styles/variables";
+
+:host {
+  position: fixed;
+  top: 10px;
+  left: 5px;
+  z-index: 1000;
+  .notification__wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 300px;
+    position: relative;
+    border-radius: 3px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    -webkit-animation: fadeInFromNone 5s ease;
+    -moz-animation: fadeInFromNone 5s ease;
+    -o-animation: fadeInFromNone 5s ease;
+    animation: fadeInFromNone 5s ease;
+    &:hover {
+      cursor: pointer;
+      animation-play-state: paused;
+    }
+    &.success {
+      background-color: $success-color;
+    }
+
+    &.warning {
+      background-color: $primary-yellow;
+    }
+
+    &.error {
+      background-color: $strawberry;
+    }
+    .notification__content {
+      padding: 15px 10px;
+      border-radius: 4px;
+      color: $primary-text-color;
+      font-weight: bold;
+      min-width: 0;
+      overflow: hidden;
+      white-space: wrap;
+    }
+  }
+}
+
+@-webkit-keyframes fadeInFromNone {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@-moz-keyframes fadeInFromNone {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@-o-keyframes fadeInFromNone {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeInFromNone {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}

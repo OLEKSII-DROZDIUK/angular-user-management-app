@@ -1,0 +1,133 @@
+<div class="user-form">
+  <div class="user-form__header">
+    <div class="user-form__header-name">
+      {{ viewMode ? fullName : "Create new user" }}
+    </div>
+    <button
+      class="user-form__header-close"
+      (click)="onClickGoUserList()"
+      [disabled]="isLoading"
+    >
+      x
+    </button>
+  </div>
+  <form class="user-form__body">
+    <div class="form-group">
+      <label for="username">Username*</label>
+      <input
+        class="form-control"
+        type="text"
+        id="username"
+        [(ngModel)]="currentUser.username"
+        fieldRequired
+        required
+        name="username"
+        autocomplete="off"
+      />
+    </div>
+    <div class="form-group">
+      <label for="first_name">First Name*</label>
+      <input
+        class="form-control"
+        type="text"
+        id="first_name"
+        [(ngModel)]="currentUser.first_name"
+        name="first_name"
+        fieldRequired
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name*</label>
+      <input
+        class="form-control"
+        type="text"
+        id="last_name"
+        [(ngModel)]="currentUser.last_name"
+        name="last_name"
+        fieldRequired
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email*</label>
+      <span class="at-symbol">@</span>
+      <input
+        class="form-control"
+        type="email"
+        id="email"
+        [(ngModel)]="currentUser.email"
+        fieldEmailValidation
+        name="email"
+        fieldRequired
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="user_type">Type*</label>
+      <select
+        class="form-control"
+        id="user_type"
+        [(ngModel)]="currentUser.user_type"
+        name="user_type"
+        required
+      >
+        <option value="Admin">{{ UserType.Admin }}</option>
+        <option value="Driver">{{ UserType.Driver }}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="password">Password*</label>
+      <input
+        class="form-control"
+        type="password"
+        id="password"
+        [(ngModel)]="currentUser.password"
+        fieldPasswordValidation
+        name="password"
+        autocomplete="new-password"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password_repeat">Repeat Password*</label>
+      <input
+        class="form-control"
+        type="password"
+        id="password_repeat"
+        [(ngModel)]="repeatPassword"
+        fieldPasswordValidation
+        name="password_repeat"
+      />
+    </div>
+  </form>
+  <div class="user-form__btns">
+    <div class="user-form__btns-view" *ngIf="viewMode; else updUserBtnsTempl">
+      <button
+        class="button-danger"
+        [class.loading]="isLoading"
+        [disabled]="isLoading"
+        (click)="onDeleteUser()"
+      >
+        Delete
+      </button>
+      <button
+        class="button-primary"
+        [class.loading]="isLoading"
+        [disabled]="isLoading"
+        (click)="onUpdateUser()"
+      >
+        Save
+      </button>
+    </div>
+    <ng-template #updUserBtnsTempl>
+      <button
+        class="button-primary"
+        [class.loading]="isLoading"
+        [disabled]="isLoading"
+        (click)="onCreateUser()"
+      >
+        Create
+      </button>
+    </ng-template>
+  </div>
+</div>

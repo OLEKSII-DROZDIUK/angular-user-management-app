@@ -1,0 +1,29 @@
+@import "variables";
+@import "mixins";
+
+.button-primary {
+  @include button-style(
+    $primary-blue,
+    $primary-text-color,
+    $secondary-blue,
+    $primary-text-color
+  );
+}
+
+.button-danger {
+  @include button-style(
+    $strawberry,
+    $primary-text-color,
+    $strawberry-hover,
+    $primary-text-color
+  );
+}
+
+.button-warning {
+  @include button-style(
+    $primary-yellow,
+    $secondary-text-color,
+    $secondary-yellow,
+    $secondary-text-color
+  );
+}

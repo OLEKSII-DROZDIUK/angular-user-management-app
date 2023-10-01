@@ -1,0 +1,16 @@
+@import "./assets/styles/normalize.css";
+@import "./assets/fonts/Roboto/stylesheet.css";
+@import "styles/webkit-scrollbar";
+@import "styles/button-styles";
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  line-height: 1.1rem;
+}
+
+.form-group__error-message {
+  position: absolute;
+  font-size: 14px;
+  color: $strawberry;
+}

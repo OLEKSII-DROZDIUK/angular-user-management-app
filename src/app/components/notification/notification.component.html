@@ -1,0 +1,11 @@
+<div class="notification">
+  <div
+    *ngFor="let notification of notifications; let i = index"
+    class="notification__wrapper"
+    [class]="notification.type"
+  >
+    <div class="notification__content">
+      {{ notification.message }}
+    </div>
+  </div>
+</div>

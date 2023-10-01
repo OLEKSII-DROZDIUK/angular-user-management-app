@@ -1,0 +1,114 @@
+@import "../../../styles/variables";
+
+:host {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  .user-form {
+    margin: 0 auto;
+    padding: 20px 15px;
+    width: 400px;
+    background: $primary-text-color;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    align-items: center;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      width: 340px;
+      &-name {
+        font-size: 20px;
+        color: $primary-greey;
+        font-weight: 600;
+        padding-left: 8px;
+      }
+      &-close {
+        font-size: 16px;
+        width: 28px;
+        height: 28px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: $primary-greey;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: $primary-greey;
+          color: $primary-text-color;
+        }
+      }
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      .form-group {
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+
+        label {
+          display: block;
+          color: $secondary-greey;
+          margin-bottom: 5px;
+          font-weight: 500;
+        }
+        .form-control {
+          width: 300px;
+          padding: 10px;
+          font-size: 16px;
+          border: 1px solid transparent;
+          border-radius: 4px;
+          background-color: $cultured;
+          color: $primary-greey;
+          &[type="email"] {
+            padding-left: 30px;
+            width: 280px;
+          }
+          &.invalid {
+            border-color: $strawberry;
+            &:focus {
+              outline: 1px solid $strawberry;
+            }
+          }
+        }
+        .at-symbol {
+          position: absolute;
+          left: 8px;
+          bottom: 4px;
+          transform: translateY(-50%);
+          color: $primary-greey;
+          font-size: 22px;
+          pointer-events: none;
+        }
+
+        select.form-control {
+          width: 320px;
+          appearance: none;
+          background: transparent;
+          background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+          background-repeat: no-repeat;
+          background-position-x: 98%;
+          background-position-y: 8px;
+          padding-right: 1rem;
+          background-color: $cultured;
+        }
+      }
+    }
+    &__btns {
+      margin-top: 10px;
+      &-view {
+        display: flex;
+        width: 320px;
+        justify-content: space-between;
+      }
+    }
+  }
+}

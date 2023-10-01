@@ -1,0 +1,5 @@
+<main class="main">
+  <router-outlet></router-outlet>
+  <app-notification></app-notification>
+  <app-global-loader *ngIf="loaderSrv.loading$ | async"></app-global-loader>
+</main>
