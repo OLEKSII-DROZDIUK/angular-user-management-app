@@ -48,6 +48,9 @@
           background-color: $gainsboro;
           cursor: pointer;
         }
+        td {
+          word-break: break-all;
+        }
       }
 
       th,
