@@ -62,7 +62,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
     if (existingUserIndex === -1) {
       return this.createErrorResponse({
-        error: 'Username not found. Reload your page, please.',
+        error: 'User not found. Reload your page, please.',
         status: 404,
       });
     }
